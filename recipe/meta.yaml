@@ -19,10 +19,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
   run:
-    - python >=3.6
+    - python >=3.7
 
 test:
   imports:
@@ -35,10 +35,12 @@ test:
     - pip
 
 about:
-  home: https://github.com/ousret/charset_normalizer
+  home: https://github.com/Ousret/charset_normalizer
   summary: The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
   license: MIT
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - data/NOTICE.md
 
 extra:
   recipe-maintainers:
