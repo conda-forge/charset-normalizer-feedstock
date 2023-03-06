@@ -1,11 +1,11 @@
-About charset-normalizer
-========================
+About charset-normalizer-feedstock
+==================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/charset-normalizer-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ousret/charset_normalizer
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/charset-normalizer-feedstock/blob/main/LICENSE.txt)
 
 Summary: The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
 
