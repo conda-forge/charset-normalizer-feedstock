@@ -27,7 +27,6 @@ requirements:
 test:
   imports:
     - charset_normalizer
-    - charset_normalizer.assets
   commands:
     - pip check
     - normalizer --help
