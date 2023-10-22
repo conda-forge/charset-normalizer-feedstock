@@ -1,5 +1,5 @@
 {% set name = "charset-normalizer" %}
-{% set version = "3.3.0" %}
+{% set version = "3.3.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/charset-normalizer-{{ version }}.tar.gz
-  sha256: 63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6
+  sha256: d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e
 
 build:
   number: 0
