@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - normalizer = charset_normalizer.cli:cli_detect
@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -33,6 +33,7 @@ test:
     - normalizer --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Ousret/charset_normalizer
