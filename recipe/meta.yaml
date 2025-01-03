@@ -1,5 +1,5 @@
 {% set name = "charset-normalizer" %}
-{% set version = "3.4.0" %}
+{% set version = "3.4.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e
+  sha256: 44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - normalizer = charset_normalizer.cli:cli_detect
