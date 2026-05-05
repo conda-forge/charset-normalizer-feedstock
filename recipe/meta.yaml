@@ -36,7 +36,7 @@ test:
     - python {{ python_min }}
 
 about:
-  home: https://github.com/Ousret/charset_normalizer
+  home: https://github.com/jawah/charset_normalizer
   summary: The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
   license: MIT
   license_file:
