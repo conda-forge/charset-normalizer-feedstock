@@ -1,5 +1,5 @@
 {% set name = "charset-normalizer" %}
-{% set version = "3.5.0" %}
+{% set version = "3.5.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 49bd5feb59b0bf3cbf6ebcf4352e371c95b9da9bacd4449f8b64d0ad2c10a26e
+  sha256: 6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3
 
 build:
   number: 0
