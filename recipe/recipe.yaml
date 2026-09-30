@@ -15,9 +15,14 @@ source:
 build:
   number: 0
   script:
-    - export CHARSET_NORMALIZER_USE_CYTHON="1"
-    - export CHARSET_NORMALIZER_CYTHON_ABI3="1"
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      - if: win
+        then: |
+         set "CHARSET_NORMALIZER_USE_CYTHON=1"
+         set "CHARSET_NORMALIZER_CYTHON_ABI3=1"
+        else: |
+         export CHARSET_NORMALIZER_USE_CYTHON="1"
+         export CHARSET_NORMALIZER_CYTHON_ABI3="1"
+      - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
     version_independent: true
     entry_points:
