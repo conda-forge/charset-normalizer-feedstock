@@ -3,22 +3,49 @@ About charset-normalizer-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/charset-normalizer-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/jawah/charset_normalizer
+Home: https://pypi.org/project/charset-normalizer/
 
 Package license: MIT
 
 Summary: The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
+
+Documentation: https://charset-normalizer.readthedocs.io/
 
 Current build status
 ====================
 
 
 <table><tr>
-    <td>All platforms:</td>
+    <td>GitHub Actions</td>
     <td>
       <a href="https://github.com/conda-forge/charset-normalizer-feedstock/actions/workflows/conda-build.yml">
         <img src="https://github.com/conda-forge/charset-normalizer-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
+    </td>
+  </tr>
+    
+  <tr>
+    <td>Azure</td>
+    <td>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13401&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/charset-normalizer-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13401&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/charset-normalizer-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
