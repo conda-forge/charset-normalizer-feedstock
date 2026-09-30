@@ -1,0 +1,77 @@
+schema_version: 1
+
+context:
+  python_min: "3.9"
+  version: "3.5.2"
+
+package:
+  name: charset-normalizer
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/c/charset-normalizer/charset_normalizer-${{ version }}.tar.gz
+  sha256: 39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef
+
+build:
+  number: 0
+  script:
+    - export CHARSET_NORMALIZER_USE_CYTHON="1"
+    - export CHARSET_NORMALIZER_CYTHON_ABI3="1"
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    version_independent: true
+    entry_points:
+      - normalizer = charset_normalizer.cli:cli_detect
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+        - python ${{ python_min }}.*
+        - cross-python_${{ target_platform }}
+    - ${{ compiler("c") }}
+    - ${{ stdlib("c") }}
+  host:
+    - python ${{ python_min }}.*
+    - python-abi3
+    - setuptools >=68,<84.1
+    - cython
+    - pip
+  run:
+    - python
+
+tests:
+  - python:
+      imports:
+        - charset_normalizer
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - abi3audit
+    script:
+      - normalizer --help
+      - if: unix
+        then:
+          - export SP_DIR=$(python -c "import site; print(site.getsitepackages()[0])")
+          - abi3audit $SP_DIR/charset_normalizer/*.abi3.so -s -v --assume-minimum-abi3 ${{ python_min }}
+      - if: win
+        then:
+          - set "SP_DIR=%PREFIX%\\Lib\\site-packages"
+          - abi3audit %SP_DIR%\\charset_normalizer\\*.pyd -s -v --assume-minimum-abi3 ${{ python_min }}
+
+about:
+  summary: The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
+  license: MIT
+  license_file:
+    - LICENSE
+    - data/NOTICE.md
+  homepage: https://pypi.org/project/charset-normalizer/
+  documentation: https://charset-normalizer.readthedocs.io/
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
